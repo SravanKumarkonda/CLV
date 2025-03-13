@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CLV Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: inline-block;
+            width: 200px;
+        }
+        input, select {
+            width: 200px;
+            padding: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer Lifetime Value Prediction</h1>
+    <h3>Please fill in the following details to predict the Customer Lifetime Value</h3>
+    <form action="/predict" method="post">
+        <div class="form-group">
+            <label>Age:</label>
+            <input type="number" name="Age" required min="18" max="100">
+        </div>
+        <div class="form-group">
+            <label>Occupation:</label>
+            <select name="Occupation" required>
+                <option value="Business">Business</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Engineer">Engineer</option>
+                <option value="Retired">Retired</option>
+                <option value="Self-Employed">Self-Employed</option>
+                <option value="Student">Student</option>
+                <option value="Teacher">Teacher</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Marital Status:</label>
+            <select name="Marital_Status" required>
+                <option value="Divorced">Divorced</option>
+                <option value="Married">Married</option>
+                <option value="Single">Single</option>
+                <option value="Widowed">Widowed</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Policies Purchased:</label>
+            <input type="number" name="Policies_Purchased" required min="0" max="10">
+        </div>
+        <div class="form-group">
+            <label>Policy Lapses:</label>
+            <input type="number" name="Policy_Lapses" required min="0" max="10">
+        </div>
+        <div class="form-group">
+            <label>Claim Frequency:</label>
+            <input type="number" name="Claim_Frequency" required min="0" max="10">
+        </div>
+        <div class="form-group">
+            <label>Claim Amount:</label>
+            <input type="number" name="Claim_Amount" required min="0">
+        </div>
+        <div class="form-group">
+            <label>Premium Paid:</label>
+            <input type="number" name="Premium_Paid" required min="0">
+        </div>
+        <div class="form-group">
+            <label>Renewal History:</label>
+            <select name="Renewal_History" required>
+                <option value="Late">Late</option>
+                <option value="Missed">Missed</option>
+                <option value="On-time">On-time</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Payment Mode:</label>
+            <select name="Payment_Mode" required>
+                <option value="Bank Transfer">Bank Transfer</option>
+                <option value="Cash">Cash</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="UPI">UPI</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Payment Timing:</label>
+            <select name="Payment_Timing" required>
+                <option value="Late">Late</option>
+                <option value="On-time">On-time</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Customer Service Interactions:</label>
+            <input type="number" name="Customer_Service_Interactions" required min="0" max="20">
+        </div>
+        <div class="form-group">
+            <label>Response to Offers:</label>
+            <select name="Response_to_Offers" required>
+                <option value="Negative">Negative</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Positive">Positive</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Cross Selling Products:</label>
+            <select name="Cross_Selling_Products" required>
+                <option value="Auto + Home">Auto + Home</option>
+                <option value="Health + Life">Health + Life</option>
+                <option value="Only Auto">Only Auto</option>
+                <option value="Only Health">Only Health</option>
+                <option value="Only Home">Only Home</option>
+            </select>
+        </div>
+        <button type="submit">Predict CLV</button>
+    </form>
+    {% if prediction is defined and prediction is not none %}
+    <div class="result">
+        <h2>Predicted Customer Lifetime Value: ₹{{ "%.2f"|format(prediction) }}</h2>
+    </div>
+    {% endif %}
+    {% if error is defined and error is not none %}
+    <div class="error" style="color: red; margin-top: 20px;">
+        {{ error }}
+    </div>
+    {% endif %}
+</body>
+</html>

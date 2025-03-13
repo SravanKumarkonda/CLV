@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    {% if error %}
+        <p style="color: red;">Error: {{ error }}</p>
+    {% else %}
+        <p>Predicted Customer Lifetime Value: ${{ prediction }}</p>
+    {% endif %}
+    <a href="/">Back to prediction</a>
+</body>
+</html>
