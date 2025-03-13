@@ -26,14 +26,16 @@ venv/
 ENV/
 
 # MLflow
-mlruns/
-mlflow_data/
+mlruns/*
+!mlruns/.gitkeep
 
 # Models and data
-models/
-*.pkl
-*.h5
-*.csv
+models/*
+!models/.gitkeep
+
+# Data folder but keep structure
+data/*
+!data/.gitkeep
 
 # IDE
 .idea/
