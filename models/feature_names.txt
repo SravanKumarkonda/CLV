@@ -1,0 +1,14 @@
+Age
+Occupation
+Marital_Status
+Policies_Purchased
+Renewal_History
+Policy_Lapses
+Claim_Frequency
+Claim_Amount
+Premium_Paid
+Payment_Mode
+Payment_Timing
+Customer_Service_Interactions
+Response_to_Offers
+Cross_Selling_Products

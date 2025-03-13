@@ -1,0 +1,15 @@
+feature,importance
+Age,5.3779706e-05
+Occupation,5.0351686e-05
+Marital_Status,5.7044123e-05
+Policies_Purchased,4.2364616e-05
+Renewal_History,5.8005364e-05
+Policy_Lapses,0.056531955
+Claim_Frequency,0.17926349
+Claim_Amount,0.016310925
+Premium_Paid,0.7473318
+Payment_Mode,4.350887e-05
+Payment_Timing,8.5386084e-05
+Customer_Service_Interactions,5.5563887e-05
+Response_to_Offers,5.56262e-05
+Cross_Selling_Products,6.020171e-05

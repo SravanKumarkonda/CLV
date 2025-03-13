@@ -25,18 +25,6 @@ wheels/
 venv/
 ENV/
 
-# MLflow
-mlruns/*
-!mlruns/.gitkeep
-
-# Models and data
-models/*
-!models/.gitkeep
-
-# Data folder but keep structure
-data/*
-!data/.gitkeep
-
 # IDE
 .idea/
 .vscode/

@@ -1,0 +1,4 @@
+# Create .gitkeep files in empty directories
+touch data/.gitkeep
+touch models/.gitkeep
+touch mlruns/.gitkeep
